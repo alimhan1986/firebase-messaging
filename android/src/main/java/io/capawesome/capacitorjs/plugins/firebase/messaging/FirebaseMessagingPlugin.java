@@ -45,11 +45,14 @@ public class FirebaseMessagingPlugin extends Plugin {
     public static Bridge staticBridge = null;
     public static String lastToken = null;
     public static RemoteMessage lastRemoteMessage = null;
+    private static FirebaseMessagingPlugin instance;
     private FirebaseMessaging implementation;
+    private boolean isBackground = false;
 
     public void load() {
         implementation = new FirebaseMessaging(this);
         staticBridge = this.bridge;
+        FirebaseMessagingPlugin.instance = this;
 
         if (lastToken != null) {
             handleTokenReceived(lastToken);
@@ -59,6 +62,18 @@ public class FirebaseMessagingPlugin extends Plugin {
             handleNotificationReceived(lastRemoteMessage);
             lastRemoteMessage = null;
         }
+    }
+
+    public static boolean isPaused() {
+      if (instance != null) {
+        return instance.isBackground;
+      } else {
+        return true;
+      }
+    }
+
+    public static void isPaused(boolean value) {
+      instance.isBackground = value;
     }
 
     @Override
