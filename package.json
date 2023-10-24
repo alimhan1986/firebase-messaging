@@ -1,5 +1,5 @@
 {
-  "name": "@capacitor-firebase/messaging",
+  "name": "wazzup-capacitor-firebase-messaging",
   "version": "5.2.0",
   "description": "Capacitor plugin for Firebase Cloud Messaging (FCM).",
   "main": "dist/plugin.cjs.js",
@@ -18,10 +18,10 @@
   "homepage": "https://capawesome.io/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/capawesome-team/capacitor-firebase.git"
+    "url": "git+https://github.com/alimhan1986/wazzup-capacitor-firebase-messaging.git"
   },
   "bugs": {
-    "url": "https://github.com/capawesome-team/capacitor-firebase/issues"
+    "url": "https://github.com/alimhan1986/wazzup-capacitor-firebase-messaging/issues"
   },
   "funding": [
     {
